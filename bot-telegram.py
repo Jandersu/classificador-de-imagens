@@ -11,7 +11,7 @@ import torch.nn.functional as F
 warnings.filterwarnings("ignore", category=FutureWarning)
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-modelo_path = 'C:/Users/JANDERSON/Desktop/TRABALHO-IA/models-and-bot/best_model.pth'
+modelo_path = 'best_model.pth'
 carregar = torch.load(modelo_path, map_location=device)
 model = timm.create_model('efficientnet_b0.ra_in1k', pretrained=False)
 model.classifier = nn.Linear(model.classifier.in_features, 2) 
